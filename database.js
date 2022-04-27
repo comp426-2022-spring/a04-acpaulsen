@@ -17,3 +17,5 @@ else {
 }
 
 module.exports = db
+
+//materials taken from lecture
