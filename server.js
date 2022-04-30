@@ -182,6 +182,81 @@ function flipACoin(call) {
     dict["result"] = "lose"
   return dict
 }
+/** Simple coin flip
+ * 
+ * Write a function that accepts no parameters but returns either heads or tails at random.
+ * 
+ * @param {*}
+ * @returns {string} 
+ * 
+ * example: coinFlip()
+ * returns: heads
+ * 
+ */
+
+function coinFlip() {
+  let result = Math.random();
+  if (result <=.5)
+    return "tails"
+  return "heads"
+}
+
+/** Multiple coin flips
+ * 
+ * Write a function that accepts one parameter (number of flips) and returns an array of 
+ * resulting "heads" or "tails".
+ * 
+ * @param {number} flips 
+ * @returns {string[]} results
+ * 
+ * example: coinFlips(10)
+ * returns:
+ *  [
+      'heads', 'heads',
+      'heads', 'tails',
+      'heads', 'tails',
+      'tails', 'heads',
+      'tails', 'heads'
+    ]
+ */
+
+function coinFlips(flips) {
+  let ret = []; 
+  let i = 0; 
+  for (let i=0; i < flips; i++) {
+    ret.push(coinFlip());
+  }
+  return ret;
+}
+
+/** Count multiple flips
+ * 
+ * Write a function that accepts an array consisting of "heads" or "tails" 
+ * (e.g. the results of your `coinFlips()` function) and counts each, returning 
+ * an object containing the number of each.
+ * 
+ * example: conutFlips(['heads', 'heads','heads', 'tails','heads', 'tails','tails', 'heads','tails', 'heads'])
+ * { tails: 5, heads: 5 }
+ * 
+ * @param {string[]} array 
+ * @returns {{ heads: number, tails: number }}
+ */
+
+function countFlips(array) {
+  var hCount = 0;
+  var tCount = 0;
+  array.forEach(element => {
+    if (element == "heads")
+      hCount++;
+    else 
+      tCount++;});
+  let dict = new Object()
+  dict["heads"] = hCount
+  dict["tails"] = tCount
+
+  return dict
+}
+
 
 
 // Default response for any other request
