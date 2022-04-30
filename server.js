@@ -79,8 +79,8 @@ app.use(function(req, res){
     res.status(404).send('404 NOT FOUND')
 });
 
-if (args.log == true) {
-  const accessLog = fs.createWriteStream('access.log', { flags: 'a' })
+if (min.log == true) { // calling the minimist log func
+  const accessLog = fs.create //WriteStream('access.log', { flags: 'a' })
   app.use(morgan('combined', { stream: accessLog }))
 }
 
