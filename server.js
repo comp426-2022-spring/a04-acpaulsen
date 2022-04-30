@@ -105,7 +105,7 @@ app.use( (req, res, next) => {
   next()
 })
 
-if (args.debug || args.d) {
+if (min.debug || min.d) {
 
   app.get('/app/log/access', (req, res) => {
       const stmt = db.prepare('SELECT * FROM accesslog').all()
