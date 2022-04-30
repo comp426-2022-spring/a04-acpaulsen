@@ -8,11 +8,11 @@ const app = express()
 var min = require("minimist")(process.argv.slice(2))
 const HTTP_PORT = min.port||process.env.PORT||5000
 
-args["port"]
-var port = args.port || 5555
+min["port"]
+var port = min.port || 5555
 
 //help
-if (args.help || args.h) {
+if (min.help || min.h) {
     console.log(`
     server.js [options]
     --port, -p	Set the port number for the server to listen on. Must be an integer between 1 and 65535.
