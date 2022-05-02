@@ -9,7 +9,7 @@ var min = require("minimist")(process.argv.slice(2))
 const HTTP_PORT = min.port||process.env.PORT||5000
 
 min["port"]
-var port = min.port || 5555
+var port = min.port || 5000
 
 //help
 if (min.help || min.h) {
@@ -80,7 +80,7 @@ app.use(function(req, res){
 });
 
 if (min.log == true) { // calling the minimist log func
-  const accessLog = fs.create //WriteStream('access.log', { flags: 'a' })
+  const accessLog = fs.createWriteStream('access.log', { flags: 'a' })
   app.use(morgan('combined', { stream: accessLog }))
 }
 
